@@ -1,6 +1,6 @@
 {
   "name": "loading-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Terminal loading effect.",
   "main": "index.js",
   "scripts": {
