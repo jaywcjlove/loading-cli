@@ -2,7 +2,7 @@
 
 Terminal loading effect.
 
-<img align="right" height="150" src="./img/colors-cli.png">
+<img height="150" src="./img/load.gif">
 
 # Install
 
