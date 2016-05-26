@@ -1,0 +1,34 @@
+{
+  "name": "loading-cli",
+  "version": "1.0.0",
+  "description": "Terminal loading effect.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "command",
+    "loading-cli",
+    "loading",
+    "exit",
+    "quit",
+    "process",
+    "graceful",
+    "shutdown",
+    "sigterm",
+    "sigint",
+    "cli",
+    "cursor",
+    "ansi",
+    "term",
+    "terminal",
+    "console",
+    "shell",
+    "command-line"
+  ],
+  "author": "kenny wang <wowohoo@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "colors-cli": "^1.0.7"
+  }
+}
