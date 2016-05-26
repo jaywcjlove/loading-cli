@@ -2,7 +2,7 @@
 
 Terminal loading effect.
 
-<img height="150" src="./img/load.gif">
+<img height="26" src="./img/load.gif">
 
 # Install
 
