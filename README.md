@@ -1,5 +1,7 @@
 # loading-cli
 
+[![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/colors-cli) [![Build Status](https://travis-ci.org/jaywcjlove/loading-cli.svg?branch=master)](https://travis-ci.org/jaywcjlove/loading-cli)
+
 Terminal loading effect.
 
 <img height="26" src="./img/load.gif">
