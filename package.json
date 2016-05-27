@@ -6,6 +6,10 @@
   "scripts": {
     "test": "node test/test.js"
   },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/jaywcjlove/loading-cli"
+  },
   "keywords": [
     "command",
     "loading-cli",
