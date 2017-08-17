@@ -1,6 +1,6 @@
 {
   "name": "loading-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Terminal loading effect.",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   ],
   "author": "kenny wang <wowohoo@qq.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "colors-cli": "^1.0.7"
   }
 }
