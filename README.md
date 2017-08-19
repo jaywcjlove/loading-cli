@@ -77,7 +77,7 @@ Values:`black` `red` `green` `yellow` `blue` `magenta` `cyan` `white` `gray`
 # Instance
 
 
-## .start()
+## .start([text])
 
 Start the spinner. Returns the instance.
 
@@ -88,6 +88,22 @@ Stop and clear the spinner. Returns the instance.
 ## .clear()
 
 Clear the spinner. Returns the instance.
+
+## .succeed([text])
+
+Stop the spinner, change it to a green `✔` and persist the current text, or text if provided. Returns the instance. See the GIF below.
+
+## .fail([text])
+
+Stop the spinner, change it to a red `✖` and persist the current text, or text if provided. Returns the instance. See the GIF below.
+
+## .warn([text])
+
+Stop the spinner, change it to a yellow `⚠` and persist the current text, or text if provided. Returns the instance.
+
+## .info([text])
+
+Stop the spinner, change it to a blue `ℹ` and persist the current text, or text if provided. Returns the instance.
 
 ## .render()
 

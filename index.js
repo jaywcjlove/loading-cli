@@ -1,6 +1,6 @@
 var ut = require('./lib/utilities');
 var cursor = require('./lib/cursor');
-var cli = require('colors-cli')
+var color = require('colors-cli')
 
 function loading(options){
     if(!(this instanceof loading)){
@@ -51,7 +51,7 @@ loading.prototype.frame = function(){
     // var frames = ["🕐 ", "🕑 ", "🕒 ", "🕓 ", "🕔 ", "🕕 ", "🕖 ", "🕗 ", "🕘 ", "🕙 ", "🕚 "]
     var frame = frames[this.frameIndex];
     if (this.color) {
-        frame = cli[this.color](frame);
+        frame = color[this.color](frame);
     }
     this.frameIndex = ++this.frameIndex % frames.length;
     return frame + ' ' + this.text;
@@ -79,7 +79,7 @@ loading.prototype.render = function(){
 loading.prototype.start = function(){
     if (!this.enabled || this.id) return this;
     this.clear();
-    cursor.hide();
+    cursor.hide(this.stream);
     this.id = setInterval(this.render.bind(this), this.interval);
     return this;
 }
@@ -89,7 +89,27 @@ loading.prototype.stop = function(){
     clearInterval(this.id);
     this.id = null;
     this.clear();
-    cursor.show();
+    cursor.show(this.stream);
+    return this;
+}
+
+
+loading.prototype.succeed = function(text) {
+    return this.stopAndPersist( color.green('✔'),text );
+}
+loading.prototype.fail = function(text) {
+    return this.stopAndPersist( color.red('✖'),text );
+}
+loading.prototype.warn =function(text) {
+    return this.stopAndPersist( color.yellow('⚠'),text );
+}
+loading.prototype.info = function(text) {
+    return this.stopAndPersist( color.blue('ℹ'),text );
+}
+loading.prototype.stopAndPersist = function(symbol,text) {
+    text = text || this.text
+    this.stop();
+    this.stream.write( (symbol ? symbol + ' ' : ' ') + text + '\n');
     return this;
 }
 

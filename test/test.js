@@ -8,7 +8,7 @@ st.start()
 setTimeout(function(){
     // st.stop()
     st.text = 'Loading rainbows';
-},2000)
+},1000)
 
 setTimeout(function(){
     st.stop()
