@@ -2,19 +2,23 @@ var ut = require('./lib/utilities');
 var cursor = require('./lib/cursor');
 var color = require('colors-cli')
 
-function loading(options){
-    if(!(this instanceof loading)){
+function loading(options) {
+    if (!(this instanceof loading)) {
         return new loading(options)
     }
     if (typeof options === 'string') {
-        options={text:options}
+        options = {
+            text: options
+        }
     }
 
-    this.options = ut.extend(options,{
+    this.options = ut.extend(options, {
         text: '',
         color: 'cyan',
-        stream: process.stderr
+        stream: process.stderr,
         // stream: process.stdout
+        // loading 样式
+        frames: ["◜", "◠", "◝", "◞", "◡", "◟"]
     });
 
     // 文本显示
@@ -28,18 +32,18 @@ function loading(options){
     this.stream = this.options.stream;
 
     // loading 样式
-    this.frames = ["◜", "◠", "◝", "◞", "◡", "◟"];
+    this.frames = this.options.frames;
 
     // 不存在
     this.id = null;
 
     // 要检查 Node 是否正在运行一个 TTY上下文 中
-    // linux 中没有运行在 tty 下的进程是 守护进程 
+    // linux 中没有运行在 tty 下的进程是 守护进程
     this.enabled = this.options.enabled || ((this.stream && this.stream.isTTY) && !process.env.CI);
     this.frameIndex = 0;
 }
 
-loading.prototype.frame = function(){
+loading.prototype.frame = function () {
     var frames = this.frames;
     // var frames =  ["◜", "◠", "◝", "◞", "◡", "◟"];
     // var frames = ["◰", "◳", "◲", "◱"]
@@ -57,8 +61,8 @@ loading.prototype.frame = function(){
     return frame + ' ' + this.text;
 }
 
-loading.prototype.clear = function(){
-   
+loading.prototype.clear = function () {
+
     if (!this.enabled) {
         return this;
     }
@@ -69,14 +73,14 @@ loading.prototype.clear = function(){
     return this;
 }
 
-loading.prototype.render = function(){
+loading.prototype.render = function () {
     this.clear();
     this.stream.write(this.frame());
     return this;
-    
+
 }
 
-loading.prototype.start = function(){
+loading.prototype.start = function () {
     if (!this.enabled || this.id) return this;
     this.clear();
     cursor.hide(this.stream);
@@ -84,7 +88,7 @@ loading.prototype.start = function(){
     return this;
 }
 
-loading.prototype.stop = function(){
+loading.prototype.stop = function () {
     if (!this.enabled) return this;
     clearInterval(this.id);
     this.id = null;
@@ -94,22 +98,22 @@ loading.prototype.stop = function(){
 }
 
 
-loading.prototype.succeed = function(text) {
-    return this.stopAndPersist( color.green('✔'),text );
+loading.prototype.succeed = function (text) {
+    return this.stopAndPersist(color.green('✔'), text);
 }
-loading.prototype.fail = function(text) {
-    return this.stopAndPersist( color.red('✖'),text );
+loading.prototype.fail = function (text) {
+    return this.stopAndPersist(color.red('✖'), text);
 }
-loading.prototype.warn =function(text) {
-    return this.stopAndPersist( color.yellow('⚠'),text );
+loading.prototype.warn = function (text) {
+    return this.stopAndPersist(color.yellow('⚠'), text);
 }
-loading.prototype.info = function(text) {
-    return this.stopAndPersist( color.blue('ℹ'),text );
+loading.prototype.info = function (text) {
+    return this.stopAndPersist(color.blue('ℹ'), text);
 }
-loading.prototype.stopAndPersist = function(symbol,text) {
+loading.prototype.stopAndPersist = function (symbol, text) {
     text = text || this.text
     this.stop();
-    this.stream.write( (symbol ? symbol + ' ' : ' ') + text + '\n');
+    this.stream.write((symbol ? symbol + ' ' : ' ') + text + '\n');
     return this;
 }
 
