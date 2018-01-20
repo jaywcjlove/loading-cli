@@ -15,16 +15,27 @@ $ npm install --save loading-cli
 # Usage
 
 ```js 
-var loading =  require('loading-cli');
-var load = loading("loading text!!")
-
-load.start()
+const loading =  require('loading-cli');
+const load = loading("loading text!!").start()
 
 setTimeout(function(){
     load.color = 'yellow';
     load.text = ' Loading rainbows';
 },2000)
 
+// stop
+setTimeout(function(){
+    load.stop()
+},3000)
+```
+
+Custom text color [colors-cli](https://github.com/jaywcjlove/colors-cli)
+
+```js
+const color = require('colors-cli/toxic');
+const loading =  require('loading-cli');
+
+const load = loading("loading text!!".blue).start();
 // stop
 setTimeout(function(){
     load.stop()
