@@ -44,7 +44,8 @@ function loading(options) {
 }
 
 loading.prototype.frame = function (frame) {
-  var frames = frame || this.frames;
+  if (frame) this.options.frames = frame;
+  var frames = this.options.frames;
   // var frames =  ["◜", "◠", "◝", "◞", "◡", "◟"];
   // var frames = ["◰", "◳", "◲", "◱"]
   // var frames = ["◐", "◓", "◑", "◒"]
@@ -62,14 +63,11 @@ loading.prototype.frame = function (frame) {
 }
 
 loading.prototype.clear = function () {
-
   if (!this.enabled) {
     return this;
   }
-
   this.stream.clearLine();
   this.stream.cursorTo(0);
-
   return this;
 }
 
@@ -96,7 +94,6 @@ loading.prototype.stop = function () {
   cursor.show(this.stream);
   return this;
 }
-
 
 loading.prototype.succeed = function (text) {
   return this.stopAndPersist(color.green('✔'), text);
