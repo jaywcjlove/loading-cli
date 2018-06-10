@@ -8,7 +8,7 @@ function loading(options) {
   }
   if (typeof options === 'string') {
     options = {
-        text: options
+      text: options
     }
   }
 
@@ -43,8 +43,8 @@ function loading(options) {
   this.frameIndex = 0;
 }
 
-loading.prototype.frame = function () {
-  var frames = this.frames;
+loading.prototype.frame = function (frame) {
+  var frames = frame || this.frames;
   // var frames =  ["◜", "◠", "◝", "◞", "◡", "◟"];
   // var frames = ["◰", "◳", "◲", "◱"]
   // var frames = ["◐", "◓", "◑", "◒"]
