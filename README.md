@@ -33,12 +33,12 @@ Custom text color [colors-cli](https://github.com/jaywcjlove/colors-cli)
 
 ```js
 const color = require('colors-cli/toxic');
-const loading =  require('loading-cli');
+const loading = require('loading-cli');
 
 const load = loading("loading text!!".blue).start();
 // stop
 setTimeout(function(){
-    load.stop()
+  load.stop()
 },3000)
 ```
 
@@ -50,11 +50,11 @@ setTimeout(function(){
 
 ```js
 load({
-    "text":"loading text!!",
-    "color":"yellow",
-    "interval":100,
-    "stream": process.stdout,
-    "frames":["◰", "◳", "◲", "◱"]
+  "text":"loading text!!",
+  "color":"yellow",
+  "interval":100,
+  "stream": process.stdout,
+  "frames":["◰", "◳", "◲", "◱"]
 })
 ```
 
@@ -84,9 +84,7 @@ Values:`black` `red` `green` `yellow` `blue` `magenta` `cyan` `white` `gray`
 ["🕐 ", "🕑 ", "🕒 ", "🕓 ", "🕔 ", "🕕 ", "🕖 ", "🕗 ", "🕘 ", "🕙 ", "🕚 "]
 ```
 
-
 # Instance
-
 
 ## .start([text])
 
@@ -123,6 +121,13 @@ Manually render a new frame. Returns the instance.
 ## .frame()
 
 Get a new frame.
+
+```js
+const loading = require('loading-cli');
+const load = loading("loading text!!");
+load.frame(["◰", "◳", "◲", "◱"]);
+load.start();
+```
 
 ## .text
 
