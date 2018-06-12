@@ -33,6 +33,6 @@
   "author": "kenny wang <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "colors-cli": "^1.0.9"
+    "colors-cli": "^1.0.14"
   }
 }
