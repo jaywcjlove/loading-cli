@@ -4,7 +4,7 @@
 
 Terminal loading effect.
 
-![](./img/load.gif)
+<img height="26" src="https://user-images.githubusercontent.com/1680273/68320716-70f33600-00fb-11ea-8a78-47b82ab28240.gif">
 
 # Install
 
