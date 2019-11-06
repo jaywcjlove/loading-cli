@@ -31,7 +31,8 @@
     "command-line"
   ],
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "author": "kenny wang <wowohoo@qq.com>",
   "license": "MIT",
