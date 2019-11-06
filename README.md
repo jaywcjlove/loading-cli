@@ -4,7 +4,7 @@
 
 Terminal loading effect.
 
-<img height="26" src="./img/load.gif">
+![](./img/load.gif)
 
 # Install
 
