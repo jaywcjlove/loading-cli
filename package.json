@@ -2,7 +2,7 @@
   "name": "loading-cli",
   "version": "1.0.8",
   "description": "Terminal loading effect.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node test/test.js"
   },
@@ -30,9 +30,12 @@
     "shell",
     "command-line"
   ],
+  "files": [
+    "lib"
+  ],
   "author": "kenny wang <wowohoo@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "colors-cli": "^1.0.14"
+    "colors-cli": "^1.0.26"
   }
 }
