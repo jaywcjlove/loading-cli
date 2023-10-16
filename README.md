@@ -1,6 +1,7 @@
 # loading-cli
 
-[![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/loading-cli) [![Build Status](https://travis-ci.org/jaywcjlove/loading-cli.svg?branch=master)](https://travis-ci.org/jaywcjlove/loading-cli)
+[![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/loading-cli)
+[![CI](https://github.com/jaywcjlove/loading-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/loading-cli/actions/workflows/ci.yml)
 
 Terminal loading effect.
 
