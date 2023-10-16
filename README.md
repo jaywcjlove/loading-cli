@@ -137,3 +137,15 @@ Change the text.
 ## .color
 
 Change the spinner color.
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<!--GAMFC_DELIMITER-->will be replaced here<!--GAMFC_DELIMITER-END-->
+
+Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
