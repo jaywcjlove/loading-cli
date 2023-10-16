@@ -21,12 +21,52 @@ jobs:
       - run: npm i markdown-to-html-cli -g
       - run: markdown-to-html --output build/index.html
 
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@main
+        with:
+          filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+          output: build/CONTRIBUTORS.svg
+          avatarSize: 42
+
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@main
+
+      - name: get tag version
+        id: tag_version
+        uses: jaywcjlove/changelog-generator@main
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
 
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@main
+        with:
+          head-ref: ${{steps.create_tag.outputs.version}}
+          filter-author: (renovate-bot|Renovate Bot)
+          filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+
+      - name: Create Release
+        uses: jaywcjlove/create-tag-action@main
+        with:
+          package-path: ./package.json
+          release: true
+          body: |
+            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/loading-cli@${{steps.changelog.outputs.version}}/file/README.md)
+
+            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-md-editor/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Comparing Changes: ${{ steps.changelog.outputs.compareurl }} 
+
+            ```bash
+            npm i loading-cli@${{steps.changelog.outputs.version}}
+            ```
+            
+            ${{ steps.changelog.outputs.changelog }}
+  
       - run: npm publish --access public --provenance
         name: 📦 loading-cli publish to NPM
         working-directory: core
