@@ -69,7 +69,6 @@ jobs:
   
       - run: npm publish --access public --provenance
         name: 📦 loading-cli publish to NPM
-        working-directory: core
         continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
