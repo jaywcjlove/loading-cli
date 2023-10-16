@@ -142,7 +142,9 @@ Change the spinner color.
 
 As always, thanks to our amazing contributors!
 
-<!--GAMFC_DELIMITER-->will be replaced here<!--GAMFC_DELIMITER-END-->
+<a href="https://github.com/jaywcjlove/loading-cli/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/loading-cli/CONTRIBUTORS.svg" />
+</a>
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
 
