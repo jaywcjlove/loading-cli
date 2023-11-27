@@ -1,5 +1,6 @@
 # loading-cli
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/loading-cli)
 [![CI](https://github.com/jaywcjlove/loading-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/loading-cli/actions/workflows/ci.yml)
 
