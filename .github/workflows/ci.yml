@@ -27,6 +27,7 @@ jobs:
           site: "Image To URI {{version}}"
           menus:
             Home: index.html
+            Sponsor: https://jaywcjlove.github.io/#/sponsor
           EOF
     
       - run: npm install idoc@1.27.2 -g
